@@ -1,7 +1,5 @@
 import cv2
 
-
-#1. TA Start--------------------------------------------
 import mediapipe as mp
 cap = cv2.VideoCapture(0)
 
@@ -10,12 +8,10 @@ mp_drawing = mp.solutions.drawing_utils
 
 hands = mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5)
 
-# TA End-----------------------------------------------
 
-#SA
 tipIds = [4, 8, 12, 16, 20]
 
-# SA- Define a function to count fingers
+#  Define a function to count fingers
 def countFingers(image, hand_landmarks, handNo=0):
     
     if hand_landmarks:
@@ -37,7 +33,7 @@ def countFingers(image, hand_landmarks, handNo=0):
 
 
 
-                
+
 
         # print(fingers)
         totalFingers = fingers.count(1)
